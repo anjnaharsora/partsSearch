@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Parts</title>
+</head>
+<body>
+<input type="text" name="search" value="" id="txt">
+<button type="button" onclick="srch()">Search</button>
+
+<p id="ans"></p>
+
+
+
+<script>
+
+
+
+    var product_name = ["product1","fjsdgfjdfbgh","dhjgfjyhdgbfj"];
+    var product_image = ["1.jpg","1.jpg","1.jpg"];
+    var product_color = ["red","blue","black"];
+    var product_size = ["240 X 240","240 X 240","240 X 240"];
+    var product_weight = ["500gm","100gm","1kg"];
+    var product_manufac = ["fjsdgfjdfbgh""hjfgvsjdhfv","dhjgfjyhdgbfj"];
+    var product_price = ["210","200","100"];
+    var i;
+    function srch()
+    {
+        alert("hello");
+        var x=document.getElementById("txt").value;
+
+            alert(x);
+            for(i=0;i<product_name.length;i++)
+            {
+                alert(product_name.length);
+                if(product_name[i]===x)
+                {
+                     //document.getElementById("ans").innerHTML = product_name;
+                        alert(product_name[i]);
+
+
+
+                }
+            }
+
+    }
+</script>
+</body>
+</html>
