@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Parts</title>
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<input type="text" name="search" id="txt" value="" autocomplete="on">
+<button type="button" onclick="srch()">search</button>
+
+<p id="ans"></p>
+
+<table id="myTable" style="border:1px;">
+    <tr>
+        <td>productName</td><td>productImage</td><td>color</td><td>size (height X Width)</td><td> weight</td><td> Manufacturer</td><td>Price</td>
+
+    </tr>
+
+</table>
+
+<script>
+
+
+
+    var product_name = ["product1","kinjal","dhjgfjyhdgbfj","product1","kinjal","dhjgfjyhdgbfj","product1","kinjal","dhjgfjyhdgbfj"];
+    var product_image = ["<img src='1.jpg' height='50px' weidth='50px'>","<img src='1.jpg' height='50px' weidth='50px'>","<img src='1.jpg' height='50px' weidth='50px'>","<img src='1.jpg' height='240px' weidth='100px'>","<img src='1.jpg' height='50px' weidth='50px'>","<img src='1.jpg' height='50px' weidth='50px'>","<img src='1.jpg' height='240px' weidth='100px'>","<img src='1.jpg' height='50px' weidth='50px'>","<img src='1.jpg' height='50px' weidth='50px'>"];
+    var product_color = ["red","blue","black","red","blue","black","red","blue","black"];
+    var product_size = ["240 X 240","240 X 240","240 X 240","240 X 240","240 X 240","240 X 240","240 X 240","240 X 240","240 X 240"];
+    var product_weight = ["500gm","100gm","1kg","500gm","100gm","1kg","500gm","100gm","1kg"];
+    var product_manufac = ["fjsdgfjdfbgh","hjfgvsjdhfv","dhjgfjyhdgbfj","fjsdgfjdfbgh","hjfgvsjdhfv","dhjgfjyhdgbfj","fjsdgfjdfbgh","hjfgvsjdhfv","dhjgfjyhdgbfj"];
+    var product_price = ["210","200","100","210","200","100","210","200","100"];
+    var i;
+    function srch()
+    {
+            var y=0;
+        var x=document.getElementById("txt").value;
+
+        for(i=0;i<product_name.length;i++)
+        {
+
+            if(product_name[i]===x)
+            {
+                var table = document.getElementById("myTable");
+                var row = table.insertRow(1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                var cell6 = row.insertCell(5);
+                var cell7 = row.insertCell(6);
+                cell1.innerHTML = product_name[i];
+                cell2.innerHTML = product_image[i];
+                cell3.innerHTML = product_color[i];
+                cell4.innerHTML = product_size[i];
+                cell5.innerHTML = product_weight[i];
+                cell6.innerHTML = product_manufac[i];
+                cell7.innerHTML = product_price[i];
+
+
+              //  alert(product_name[i]);
+                    y++;
+                    JSON.stringify(product_name[i],product_color[i],product_manufac[i],product_image[i]);
+
+            }
+        }
+        if(y==0)
+        {
+            alert("no product found!!!!");
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>
